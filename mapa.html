@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conecta POA - Mapa</title>
-    <link rel="stylesheet" href="./mapa.css">
+    <link rel="stylesheet" href="mapa.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 </head>
 <body>
   <div id="map"></div>
  
-<button class="voltar" onclick="window.location.href='inicio.html'">
+<button class="voltar" onclick="window.location.href='index.html'">
   Voltar para o início
 </button>
  
@@ -38,6 +38,18 @@
       </ul>
     </div>
   </div>
+         <div class="footer-section">
+            <h4>Contato</h4>
+            <p> Porto Alegre - RS</p>
+            <p>Conectapoa@gmail.com</p>
+        </div>
+ 
+    </div>
+ 
+    <div class="footer-bottom">
+        <p>© 2025 Conecta POA — Todos os direitos reservados.</p>
+    </div>
+</footer>
  
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
@@ -59,6 +71,7 @@
     });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(miniMap);
 </script>
+
 </body>
 </html>
  

@@ -136,6 +136,7 @@ header nav a:hover {
     padding: 20px;
     border-radius: 10px;
     border: 2px solid #d8d7e6;
+    border-image-width: 30px;
 }
  
 .titulo-noticias {
@@ -166,6 +167,7 @@ header nav a:hover {
 .noticia-item:hover {
     background: #eceaf7;
 }
+.principais-noticias-right
  
  .side-menu {
   position: fixed;
@@ -264,4 +266,87 @@ header nav a:hover {
     font-size: 14px;
     opacity: 0.8;
 }
- 
+ .gov-br {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 38px;  /* pode ajustar maior/menor */
+    letter-spacing: 1px;
+    text-transform: lowercase;
+}
+
+.gov-br span:nth-child(1) {
+    color: #1351B4; /* azul */
+}
+
+.gov-br span:nth-child(2) {
+    color: #FFCC00; /* amarelo */
+}
+
+.gov-br span:nth-child(3) {
+    color: #009C3B; /* verde */
+}
+.noticias-box {
+    width: 100%;
+    height: 260px;        /* ALTURA FIXA (pode ajustar) */
+    background: #e8e7ef;
+    border: 2px solid #bfc0d9;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    overflow: hidden;     /* impede imagem de sair da caixa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noticias-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* CORTA a imagem proporcionalmente */
+    border-radius: 10px;
+}
+.noticia {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.noticia img {
+    width: 100%;
+    max-width: 750px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+.legenda {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    background: #ecebfd;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+.noticia {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.noticia img {
+    width: 100%;
+    max-width: 750px;
+    border-radius: 14px;
+    display: block;
+    margin: 0 auto;
+}
+
+.legenda-bonita {
+    margin-top: 12px;
+    background: #eeeafd;
+    padding: 10px 16px;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #3a366b;
+    font-weight: 500;
+}
