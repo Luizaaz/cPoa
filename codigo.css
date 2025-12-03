@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+ 
+body {
+    background: #0a0225;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+ 
+.container {
+    width: 90%;
+    height: 90vh;
+    background: #ffffff10;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+}
+ 
+/* LADO ESQUERDO - FORMULÁRIO */
+.form-box {
+    width: 50%;
+    background: #ffffff;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: col
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+ 
+body {
+    background: #0a0225;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+ 
+.container {
+    width: 90%;
+    height: 90vh;
+    background: #ffffff10;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+}
+ 
+/* LADO FORMULÁRIO */
+.form-box {
+    width: 50%;
+    background: #ffffff;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ 
+.logo {
+    width: 150px;
+    display: block;
+    margin: 0 auto 20px;
+}
+ 
+.cabecalho {
+    display: flex;
+    justify-content: center;
+}
+ 
+.login-link {
+    text-align: center;
+    margin-bottom: 20px;
+}
+ 
+.login-link a {
+    color: #4c3bcf;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+ 
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+}
+ 
+form {
+    display: flex;
+    flex-direction: column;
+}
+ 
+label {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+ 
+input {
+    margin-top: 5px;
+    padding: 14px;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 3px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-weight: 600;
+}
+ 
+.btn-criar {
+    margin-top: 25px;
+    padding: 14px;
+    background: #31c237;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+ 
+.btn-criar:hover {
+    background: #28a32f;
+}
+ 
+/* LADO TEXTO */
+.text-box {
+    width: 50%;
+    background: #3d4160;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+ 
+.inner {
+    background: white;
+    padding: 40px 50px;
+    border-radius: 15px;
+    width: 75%;
+    box-shadow: 0px 0px 20px #00000030;
+}
+ 
+.text-box h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+ 
+.text-box p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}

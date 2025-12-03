@@ -1,0 +1,274 @@
+:root{
+ 
+  --bg:#0f1020;        /* fundo geral */
+ 
+  --panel:#3e3a55;     /* painel direito */
+ 
+  --card:#ffffff;      /* cartão branco */
+ 
+  --accent:#25c13a;    /* verde botão */
+ 
+  --muted:#8b8b9a;     /* texto secundário */
+ 
+  --radius:12px;
+ 
+  --pad:40px;
+ 
+  --maxw:1100px;
+ 
+  --shadow: 0 10px 30px rgba(0,0,0,0.5);
+ 
+  font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+ 
+}
+ 
+*{box-sizing:border-box}
+ 
+html,body{height:100%}
+ 
+body{
+ 
+  margin:0;
+ 
+  min-height:100vh;
+ 
+  background:var(--bg);
+ 
+  display:flex;
+ 
+  align-items:center;
+ 
+  justify-content:center;
+ 
+  padding:30px;
+ 
+  color:#111;
+ 
+}
+ 
+/* Layout principal */
+ 
+.container{
+ 
+  width:100%;
+ 
+  max-width:var(--maxw);
+ 
+  display:flex;
+ 
+  gap:30px;
+ 
+  border-radius:18px;
+ 
+  overflow:hidden;
+ 
+  box-shadow:var(--shadow);
+ 
+  background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+ 
+}
+ 
+/* Coluna esquerda (form) */
+ 
+.left{
+ 
+  flex:1 1 50%;
+ 
+  background:var(--card);
+ 
+  padding:var(--pad);
+ 
+  display:flex;
+ 
+  flex-direction:column;
+ 
+  gap:18px;
+ 
+  justify-content:center;
+ 
+}
+ 
+/* Coluna direita (painel de instruções) */
+ 
+.right{
+ 
+  flex:1 1 50%;
+ 
+  background:var(--panel);
+ 
+  padding:var(--pad);
+ 
+  display:flex;
+ 
+  align-items:center;
+ 
+  justify-content:center;
+ 
+}
+ 
+/* Marca e volta */
+ 
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+ 
+.logo{
+ 
+  font-weight:700;
+ 
+  font-style:italic;
+ 
+  color:#111;
+ 
+  font-size:24px;
+ 
+}
+ 
+.back{
+ 
+  color:var(--muted);
+ 
+  font-size:14px;
+ 
+  text-decoration:none;
+ 
+}
+ 
+/* Conteúdo do formulário */
+ 
+.content h1{
+ 
+  margin:8px 0 0 0;
+ 
+  font-size:28px;
+ 
+  color:#111;
+ 
+}
+ 
+.help{
+ 
+  font-size:14px;
+ 
+  color:var(--muted);
+ 
+  margin:8px 0 12px 0;
+ 
+}
+ 
+.help.small{margin-top:10px}
+ 
+/* Inputs e botões */
+ 
+label{
+ 
+  font-size:14px;
+ 
+  color:var(--muted);
+ 
+  display:block;
+ 
+  margin-top:8px;
+ 
+}
+ 
+.input{
+ 
+  width:100%;
+ 
+  padding:12px 14px;
+ 
+  margin-top:8px;
+ 
+  border-radius:8px;
+ 
+  border:1px solid #e7e7eb;
+ 
+  font-size:15px;
+ 
+  background:#fafafa;
+ 
+  outline:none;
+ 
+}
+ 
+.input:focus{box-shadow:0 0 0 4px rgba(37,193,58,0.08);border-color:rgba(37,193,58,0.6)}
+ 
+.btn{
+ 
+  display:inline-block;
+ 
+  margin-top:18px;
+ 
+  padding:12px 18px;
+ 
+  border-radius:10px;
+ 
+  border:0;
+ 
+  cursor:pointer;
+ 
+  font-size:16px;
+ 
+  font-weight:600;
+ 
+  background:var(--accent);
+ 
+  color:#fff;
+ 
+  box-shadow:0 6px 18px rgba(37,193,58,0.25);
+ 
+  width:100%;
+ 
+}
+ 
+/* Cartão de informações no painel direito */
+ 
+.info-card{
+ 
+  max-width:360px;
+ 
+  background:var(--card);
+ 
+  padding:22px;
+ 
+  border-radius:12px;
+ 
+  box-shadow:0 8px 28px rgba(0,0,0,0.35);
+ 
+  text-align:center;
+ 
+}
+ 
+.info-card h2{
+ 
+  margin:0 0 8px 0;
+ 
+  font-size:20px;
+ 
+  color:#111;
+ 
+}
+ 
+.info-card p{
+ 
+  margin:0;
+ 
+  font-size:14px;
+ 
+  color:var(--muted);
+ 
+  line-height:1.5;
+ 
+}
+ 
+/* Responsividade */
+ 
+@media (max-width:880px){
+ 
+  .container{flex-direction:column}
+ 
+  .left,.right{padding:28px}
+ 
+}
+ 
+ 
+ 
