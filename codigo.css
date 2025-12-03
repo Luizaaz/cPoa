@@ -160,3 +160,25 @@ input {
     font-size: 16px;
     margin-bottom: 10px;
 }
+button:hover {
+    background-color: #1bb32a;
+}
+a.btn {
+    display: block;          /* vira bloco, fica do tamanho dos inputs */
+    width: 100%;             /* ocupa toda a largura */
+    background: #22d432;     /* cor do botão */
+    color: white;            /* texto branco */
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;     /* cantos arredondados */
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;   /* remove sublinhado */
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+a.btn:hover {
+    background: #1bb32a;     /* efeito hover */
+}
