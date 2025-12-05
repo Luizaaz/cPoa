@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIMA + | Porto Alegre, RS</title>
+    <link rel="stylesheet" href="/clima..css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="menu-icon" id="menuButton">☰</div>
+        <img src="./logoazul.png" alt="conecta poa" class="logo">
+        <div class="search-box">
+            
+        </div>
+        <div class="user-info">
+            <span>|</span>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Porto Alegre, RS</span>
+        </div>
+    </header>
+
+    <nav id="sideMenu" class="side-menu">
+    <a href="/clima.html">↩</a>
+    <a href="/index.html">Ínicio</a>
+    <a href="/mapa.html">Mapa</a>
+    <a href="/login.html">Login 👤</a>
+  </nav>
+
+    <main class="container">
+        <div class="main-card">
+            <div class="alert-banner">
+                Alerta de calor e risco de temporais isolados no RS nos próximos dias.
+            </div>
+
+            <div class="current-weather">
+                <h2>Tempo agora em **Porto Alegre, RS**</h2>
+                <div class="temp-main">
+                    <span class="temperature">29°</span>
+                    <span class="condition">
+                        <i class="fas fa-cloud-sun"></i>
+                        **• Parcialmente ensolarado**
+                        <br>
+                        Sensação 31°
+                    </span>
+                </div>
+                
+                <div class="sun-info">
+                    Nascer do sol: 05:16 • Pôr do sol: 19:15
+                </div>
+
+                <div class="details-row">
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <span class="value">**16**</span>
+                        <span class="unit">Vento **km/h**</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <span class="value">**62**%</span>
+                        <span class="unit">Umidade</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-eye"></i>
+                        <span class="value">~**10**</span>
+                        <span class="unit">Visib. **km**</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span class="value">**1010-1011**</span>
+                        <span class="unit">Pressão **hPa**</span>
+                    </div>
+                </div>
+
+                <button class="more-details">Mais detalhes</button>
+
+                <p class="source-text">
+                    Fonte: MSN Weather & calendário solar
+                </p>
+            </div>
+            
+            <div class="side-content">
+                <div class="info-card uv-index">
+                    <div class="card-title">Índice UV</div>
+                    <div class="card-content">
+                        **Baixo agora** • sobe à tarde (**max. alto em dias de céu aberto**).
+                    </div>
+                </div>
+
+                <div class="info-card air-quality">
+                    <div class="card-title">Qualidade do ar</div>
+                    <div class="card-content">
+                        **Moderada** (sensíveis devem se cuidar!).
+                    </div>
+                </div>
+                
+                <div class="info-card next-hours">
+                    <div class="card-title">Próximas horas</div>
+                    <div class="card-content time-slots">
+                        **14h 30°** | **15h 31°** | **16h 31°** | **17h 29°**
+                    </div>
+                </div>
+
+                <div class="tree-image-container">
+                                    </div>
+                
+                <div class="forecast-15-days">
+                    <div class="card-title">Previsão para 15 dias — **Porto Alegre**</div>
+                    <div class="forecast-days">
+                        <div class="day-item">
+                            <span class="date">05/12</span>
+                            <span class="temp">**33° / 17°**</span>
+                            <span class="condition-small">Ensolarado</span>
+                        </div>
+                        <div class="day-item">
+                            <span class="date">06/12</span>
+                            <span class="temp">**33° / 19°**</span>
+                            <span class="condition-small">Muitas nuvens</span>
+                        </div>
+                        <div class="day-item">
+                            <span class="date">07/12</span>
+                            <span class="temp">**27° / 22°**</span>
+                            <span class="condition-small">Nublado</span>
+                        </div>
+                        <div class="day-item">
+                            <span class="date">08/12</span>
+                            <span class="temp">**29° / 21°**</span>
+                            <span class="condition-small">Nublado</span>
+                        </div>
+                        <div class="day-item last-day">
+                            <span class="date">09/12</span>
+                            <span class="temp">**25° / 21°**</span>
+                            <span class="condition-small">Chuva/Tempestade</span>
+                        </div>
+                    </div>
+                    <p class="source-text-small">
+                        Fontes agregadas (climatempo, Weather-Forecast, FreeMeteo). Ajuste os dias conforme atualização.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+<script>
+       const menuButton = document.getElementById('menuButton');
+    const sideMenu = document.getElementById('sideMenu');
+    menuButton.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+    const rightButtons = document.querySelectorAll('.right');
+    const leftButtons = document.querySelectorAll('.left');
+ 
+    rightButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        target.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+    });
+ 
+    leftButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        target.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+    });
+</script>
+</body>
+</html>
