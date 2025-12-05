@@ -1,0 +1,363 @@
+/* Importação de fonte, se necessário (ex: Lato) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+:root {
+    /* Cores */
+    --color-primary-blue: #007bff; /* Azul vibrante para o header e botões */
+    --color-bg-light: #f4f6f8; /* Fundo geral da página */
+    --color-bg-card: #fff; /* Fundo do card branco */
+    --color-bg-alert: #fdd; /* Fundo do alerta (rosa claro) */
+    --color-pink-card: #fff0f5; /* Fundo do card principal (rosa pálido) */
+    --color-text-dark: #333; /* Texto principal */
+    --color-text-secondary: #6c757d; /* Texto secundário/fonte */
+    --color-border: #ddd; /* Borda leve */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+
+}
+
+header {
+    background-color: #110931;
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
+header .logo {
+    font-size: 26px;
+    font-weight: 600;
+    color: #ff6f61;
+    font-style: italic;
+}
+
+/* --- BARRA DE NAVEGAÇÃO (HEADER) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#110931;
+    padding: 15px 50px;
+    color: white;
+}
+
+
+
+.search-box {
+    display: flex;
+    gap: 5px;
+}
+
+.search-box input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.search-box button {
+    padding: 8px 15px;
+    background-color: #fff;
+    color: var(--color-primary-blue);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.user-info a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.user-info span {
+    margin: 0 5px;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.container {
+    padding: 30px 50px;
+    display: flex;
+    justify-content: center; /* Centraliza o card principal */
+}
+
+/* Card Principal (o grande rosa claro) */
+.main-card {
+    background-color:rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1100px; /* Limite de largura para replicar o estilo */
+    padding-bottom: 20px;
+    overflow: hidden; /* Para garantir que o alerta fique no topo */
+}
+
+/* Aviso de Alerta */
+.alert-banner {
+    background-color: #fff;
+    color: var(--color-text-dark);
+    padding: 15px 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Layout Principal do Clima */
+.current-weather {
+    display: inline-block; /* Para ocupar apenas o espaço necessário à esquerda */
+    width: 60%; /* Ajuste de proporção */
+    padding: 0 30px;
+    border-right: 1px solid var(--color-border);
+}
+
+.side-content {
+    display: inline-block;
+    width: 40%; /* Ajuste de proporção */
+    padding: 0 30px;
+}
+
+.current-weather h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+/* Temperatura e Condição Principal */
+.temp-main {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.temperature {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--color-text-dark);
+    margin-right: 15px;
+    line-height: 1;
+}
+
+.condition {
+    font-size: 1.2rem;
+    padding-top: 15px; /* Alinhamento visual */
+}
+
+.condition i {
+    font-size: 1.4rem;
+    margin-right: 5px;
+    color: orange; /* Cor do ícone do sol */
+}
+
+.sun-info {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 25px;
+}
+
+/* Detalhes do Tempo (Vento, Umidade, etc.) */
+.details-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    max-width: 450px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%; /* 4 itens por linha */
+    text-align: center;
+}
+
+.detail-item i {
+    font-size: 1.2rem;
+    color: var(--color-primary-blue);
+    margin-bottom: 5px;
+}
+
+.detail-item .value {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.detail-item .unit {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
+.more-details {
+    padding: 8px 15px;
+    background-color: var(--color-primary-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.source-text {
+    font-size: 0.7rem;
+    color: var(--color-text-secondary);
+}
+
+/* --- CONTEÚDO LATERAL (SIDE-CONTENT) --- */
+
+/* Cartões de Informação (UV, Qualidade do Ar, Próximas Horas) */
+.info-card {
+    background-color: var(--color-bg-card);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Layout dos 3 cartões no topo */
+.info-card.uv-index,
+.info-card.air-quality,
+.info-card.next-hours {
+    width: 48%; /* 2 por linha */
+    float: left;
+    min-height: 80px; /* Altura mínima para alinhamento */
+}
+
+.info-card.uv-index,
+.info-card.air-quality {
+    margin-right: 4%;
+}
+
+.info-card.next-hours {
+    width: 99%; /* 100% de largura */
+    clear: both; /* Limpa o float para ir para a próxima linha */
+}
+
+.card-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    margin-bottom: 5px;
+}
+
+.card-content {
+    font-size: 1rem;
+}
+
+.time-slots {
+    font-size: 0.9rem;
+}
+
+/* Imagem da Árvore */
+.tree-image-container {
+    width: 100%;
+    height: 150px; /* Altura para a imagem de exemplo */
+    background-color: #d1e7c5; /* Cor de fundo para simular a imagem */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    /* Para a tag , você precisaria
+       usar uma imagem de fundo real ou a tag <img>. */
+}
+
+/* Previsão para 15 Dias */
+.forecast-15-days {
+    clear: both; /* Garante que fique abaixo dos cartões flutuantes */
+    padding-top: 10px;
+}
+
+.forecast-days {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.day-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5px;
+    border-right: 1px solid var(--color-border);
+    text-align: center;
+    width: 20%; /* 5 itens por linha */
+}
+
+.day-item.last-day {
+    border-right: none;
+}
+
+.day-item .date {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 3px;
+}
+
+.day-item .temp {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.day-item .condition-small {
+    font-size: 0.75rem;
+    color: var(--color-text-dark);
+}
+
+.source-text-small {
+    font-size: 0.65rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: 15px;
+}
+.logo {
+  width: 120px;
+}
+ 
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: #1a104a;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease;
+}
+ 
+.side-menu a {
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 18px;
+}
+ 
+.side-menu a:hover {
+  background-color: #5a2aff;
+}
+ 
+.side-menu.open {
+  left: 0;
+}
+ 
+.logo {
+  width: 150px;
+}
+.menu-icon {
+  font-size: 32px;
+  cursor: pointer;
+  color: white;
+}
+ 
