@@ -1,44 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conecta POA - Mapa</title>
-    <link rel="stylesheet" href="mapa.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa POA - Busca Completa</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="/mapa.css">
+
 </head>
+
 <body>
-  <div id="map"></div>
- 
-<button class="voltar" onclick="window.location.href='index.html'">
+
+<div id="map"></div>
+
+<button class="voltar" onclick="window.location.href='inicio.html'">
   Voltar para o início
 </button>
- 
- 
-  <div class="caixa-pesquisa">
+
+<div class="sidebar">
+
+<div class="caixa-pesquisa">
+
+    <!-- CAMPO DE BUSCA CORRIGIDO -->
     <div class="campo-busca">
-      <input type="text" placeholder="Buscar..." />
+        <input id="searchInput" type="text" placeholder="Buscar lugar, rua ou bairro..." />
+        <button id="searchBtn" class="btn-busca">🔍</button>
     </div>
- 
-    <div class="botoes">
-      <button>Restaurantes</button>
-      <button>Gasolina</button>
-      <button>Hotéis</button>
-    </div>
- 
+
     <div class="mini-mapa" id="mini-map"></div>
- 
+
     <div class="lista-pesquisa">
       <h3><em>Pesquisas da Região</em></h3>
-      <ul>
-        <li>→ Shopping Total</li>
-        <li>→ Hospital São Lucas</li>
-        <li>→ Bourbon Assis Brasil</li>
-        <li>→ Libero Badaró</li>
-      </ul>
+
+      <!-- BOTÕES AJUSTADOS COM CATEGORIAS VERDADEIRAS -->
+      <button onclick="buscarCategoria('stadium')">→ Estádios</button>
+      <button onclick="buscarCategoria('hospital')">→ Hospitais</button>
+      <button onclick="buscarCategoria('tourism')">→ Pontos Turísticos</button>
     </div>
-  </div>
-         <div class="footer-section">
+
+</div>
+</div>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+
+// MAPA PRINCIPAL
+var map = L.map("map").setView([-30.0346, -51.2177], 13);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+
+var marker;
+var grupoMarcadores;
+
+
+// FUNÇÃO DE PESQUISA MANUAL
+async function pesquisarLocal(query) {
+  if (!query || query.length < 3) {
+    alert("Digite pelo menos 3 letras.");
+    return;
+  }
+
+  let url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`;
+
+  let response = await fetch(url);
+  let data = await response.json();
+
+  if (data.length === 0) {
+    alert("Nenhum resultado encontrado!");
+    return;
+  }
+
+  let lugar = data[0];
+
+  if (marker) map.removeLayer(marker);
+
+  marker = L.marker([lugar.lat, lugar.lon])
+    .addTo(map)
+    .bindPopup(lugar.display_name)
+    .openPopup();
+
+  map.setView([lugar.lat, lugar.lon], 17);
+}
+
+
+// FUNÇÃO PARA CATEGORIAS (ESTÁDIOS / HOSPITAIS / TURISMO)
+async function buscarCategoria(tipo) {
+
+  if (grupoMarcadores) map.removeLayer(grupoMarcadores);
+  grupoMarcadores = L.layerGroup().addTo(map);
+
+  let url = `https://nominatim.openstreetmap.org/search?city=Porto+Alegre&format=json&limit=30&amenity=${tipo}`;
+
+  let res = await fetch(url);
+  let data = await res.json();
+
+  if (data.length === 0) {
+    alert("Nenhum local encontrado nessa categoria!");
+    return;
+  }
+
+  data.forEach(p => {
+    L.marker([p.lat, p.lon]).addTo(grupoMarcadores)
+      .bindPopup(p.display_name);
+  });
+
+  map.setView([data[0].lat, data[0].lon], 14);
+}
+
+
+// AÇÕES DO BOTÃO E ENTER
+document.getElementById("searchBtn").onclick = () => {
+  pesquisarLocal(document.getElementById("searchInput").value);
+};
+
+document.getElementById("searchInput").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") pesquisarLocal(this.value);
+});
+
+</script>
+
+<footer class="footer">
+    <div class="footer-container">
+ 
+        <div class="footer-section">
+            <h3>Conecta POA</h3>
+            <p>Portal de informações, clima, segurança e serviços de Porto Alegre.</p>
+        </div>
+ 
+        <div class="footer-section">
+            <h4>Navegue</h4>
+            <ul>
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/noticias.html">Notícias</a></li>
+                <li><a href="/mapa.html">Mapa</a></li>
+                <li><a href="/login.html">Cadastro</a></li>
+            </ul>
+        </div>
+ 
+        <div class="footer-section">
             <h4>Contato</h4>
             <p> Porto Alegre - RS</p>
             <p>Conectapoa@gmail.com</p>
@@ -50,28 +151,9 @@
         <p>© 2025 Conecta POA — Todos os direitos reservados.</p>
     </div>
 </footer>
- 
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    const map = L.map('map').setView([-30.0277, -51.2287], 12);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap'
-    }).addTo(map);
- 
-    L.marker([-30.0277, -51.2287])
-        .addTo(map)
-        .bindPopup('Porto Alegre ')
-        .openPopup();
-    const miniMap = L.map('mini-map', {
-        center: [-30.0277, -51.2287],
-        zoom: 13,
-        zoomControl: false,
-        attributionControl: false,
-        dragging: false,
-    });
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(miniMap);
-</script>
 
 </body>
 </html>
+
+
  
