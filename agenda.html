@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conecta POA - Jogos & Cultura</title>
+<link rel="stylesheet" href="/clima.css">
+
+</head>
+<body>
+<header class="header">
+<div class="menu-icon" id="menuButton">☰</div>
+<nav id="sideMenu" class="side-menu">
+<a href="index.html">Home</a>
+<a href="noticias.html">Notícias</a>
+<a href="cidade.html">Sobre a Cidade</a>
+<a href="eventos.html">Jogos & Cultura</a>
+</nav>
+</header>
+<main class="content">
+<h1>Jogos e Cultura em Porto Alegre</h1>
+<div class="cards-container">
+<div class="card">
+<h3>Calendário de Jogos</h3>
+<ul>
+<li>Grêmio x Internacional - 12/12/2025</li>
+<li>Esporte Clube Juventude x Caxias - 15/12/2025</li>
+<li>Porto Alegre FutSal - Torneio Anual - 20/12/2025</li>
+</ul>
+</div>
+<div class="card">
+<h3>Eventos Culturais</h3>
+<ul>
+<li>Festival de Cinema de Porto Alegre - 10 a 15/01/2026</li>
+<li>Feira do Livro - 05 a 12/02/2026</li>
+<li>Semana da Cultura Gaúcha - 18 a 25/02/2026</li>
+</ul>
+</div>
+<div class="card">
+<h3>Shows e Festas</h3>
+<p>Porto Alegre recebe diversos shows, festivais de música e festas típicas ao longo do ano, unindo tradição e entretenimento moderno.</p>
+</div>
+</div>
+</main>
+<script >
+    const menuButton = document.getElementById('menuButton');
+    const sideMenu = document.getElementById('sideMenu');
+
+    menuButton.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+
+    const rightButtons = document.querySelectorAll('.right');
+    const leftButtons = document.querySelectorAll('.left');
+ 
+    rightButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        target.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+    });
+ 
+    leftButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        target.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+    });
+</script>
+</body>
+</html>
+ 
+ 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conecta POA - Sobre a Cidade</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+<div class="menu-icon" id="menuButton">☰</div>
+<nav id="sideMenu" class="side-menu">
+<a href="index.html">Home</a>
+<a href="noticias.html">Notícias</a>
+<a href="cidade.html">Sobre a Cidade</a>
+<a href="eventos.html">Jogos & Cultura</a>
+</nav>
+</header>
+<main class="content">
+<h1>Sobre Porto Alegre</h1>
+<p>Porto Alegre, capital do Rio Grande do Sul, é uma cidade que mistura tradição e modernidade, com uma rica história cultural, belos parques e uma vida urbana ativa.</p>
+<div class="cards-container">
+<div class="card">
+<h3>Pontos Turísticos</h3>
+<ul>
+<li>Parque Farroupilha (Redenção)</li>
+<li>Museu Iberê Camargo</li>
+<li>Mercado Público</li>
+<li>Orla do Guaíba</li>
+</ul>
+</div>
+<div class="card">
+<h3>Cultura e Tradições</h3>
+<p>A cidade possui forte influência gaúcha, com festas típicas, música tradicional e eventos culturais durante todo o ano.</p>
+</div>
+<div class="card">
+<h3>Gastronomia</h3>
+<p>De churrascarias a cafés modernos, Porto Alegre oferece uma variedade de sabores que refletem a diversidade cultural local.</p>
+</div>
+</div>
+</main>
+<footer class="footer">
+    <div class="footer-container">
+ 
+        <div class="footer-section">
+            <h3>Conecta POA</h3>
+            <p>Portal de informações, clima, segurança e serviços de Porto Alegre.</p>
+        </div>
+ 
+        <div class="footer-section">
+            <h4>Navegue</h4>
+            <ul>
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/noticias.html">Notícias</a></li>
+                <li><a href="/mapa.html">Mapa</a></li>
+                <li><a href="/cadastro.html">Cadastro</a></li>
+                <li><a href="/clima.html">Clima</a></li>
+
+            </ul>
+        </div>
+ 
+        <div class="footer-section">
+            <h4>Contato</h4>
+            <p> Porto Alegre - RS</p>
+            <p>Conectapoa@gmail.com</p>
+        </div>
+ 
+    </div>
+ 
+    <div class="footer-bottom">
+        <p>© 2025 Conecta POA — Todos os direitos reservados.</p>
+    </div>
+</footer>
+ 
+</body>
+</html>
+ 
