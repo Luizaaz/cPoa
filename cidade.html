@@ -34,7 +34,29 @@
   </main>
 
   <script>
+const menuButton = document.getElementById('menuButton');
+    const sideMenu = document.getElementById('sideMenu');
 
+    menuButton.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+
+    const rightButtons = document.querySelectorAll('.right');
+    const leftButtons = document.querySelectorAll('.left');
+ 
+    rightButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        target.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+    });
+ 
+    leftButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        target.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+    });
 </script> 
 </body>
 </html>
